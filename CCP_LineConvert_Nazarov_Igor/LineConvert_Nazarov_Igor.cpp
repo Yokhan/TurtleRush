@@ -31,30 +31,36 @@ int main()
 
     int lenght = buffer.size();
 
-        
+
 
     //Comparing letters between each other & replace with ")", if it matches
 
     for (int i = 0; i < lenght; i++) {
 
-        for (int j = i+1; j < lenght; j++) {
+        for (int j = i + 1; j < lenght; j++) {
+
             if (buffer[i] == buffer[j]) {
                 line[i] = *")";
                 line[j] = *")";
             }
-            
-        }
-        
-        }   
 
-    //Exeption to fix potential "(" issue in comparison 
+            // "(" exeption
+
+            else if (buffer[i] == *")") {
+                line[i] = *"(";
+            }
+        }
+
+    }
+
+    //Replacing single letters with " 
 
     for (int i = 0; i < lenght; i++) {
         if (line[i] != *")") {
             line[i] = *"(";
         }
     }
-    
+
 
     cout << endl << "Result: " << line << endl;
 
