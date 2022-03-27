@@ -53,7 +53,7 @@ int main()
 
     }
 
-    //Replacing single letters with " 
+    //Replacing single letters with "(" 
 
     for (int i = 0; i < lenght; i++) {
         if (line[i] != *")") {
